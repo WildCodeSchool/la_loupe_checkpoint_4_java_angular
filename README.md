@@ -5,7 +5,7 @@
 
 
 - Cloner ce dépôt github 
-- Créer une branche au format **nom_prenom_ville**
+- Créer une branche au format **nom_prenom_ville_mois_annee**
 - Créer un dossier **back** et y démarrer un nouveau projet Spring Boot 
 - Créer un dossier **front** et y démarrer un nouveau projet Angular
 
