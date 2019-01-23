@@ -1,0 +1,50 @@
+(Q1) Une application Spring Boot s'exécute... ? A
+A ) Sur un serveur
+B ) Dans le navigateur
+C ) Les deux à la fois
+D ) La réponse D
+(Q2) A contrario, une application Angular est une application ... ?A
+A ) Client
+B ) Serveur
+C ) Jambon
+D ) Pâté
+(Q3) Spring boot et Angular sont des... ?B
+A ) ORM
+B ) Frameworks
+C ) Bibliothèques
+D ) Modules
+(Q4) À quoi sert un Framework (plusieurs réponses possibles)... ?DA
+A ) À donner un cadre de travail
+B ) À se compliquer la vie
+C ) À être plus productif
+D ) À faciliter la maintenance du code
+(Q5) L'annotation @Entity sert à définir... ?C
+A ) Un controller
+B ) Un repository
+C ) Une entité
+D ) Une vue
+(Q6) L'annotation @OneToMany sert à (plusieurs réponses possibles)... ?B
+A ) Créer une relation entre deux entités
+B ) Faire une jointure
+C ) Afficher ses données au format JSON
+D ) Sécuriser une partie de son application
+(Q7) Quel acronyme ci-dessous ne représente PAS une attaque ?D
+A ) CSRF
+B ) XSS
+C ) SQL Injection
+D ) XSLT
+(Q8) En quoi consiste une attaque de type CSRF ?A
+A ) À piéger l'internaute en lui faisant exécuter une requête à son insu, avec ses propres droits.
+B ) À injecter du javascript dans une image
+C ) À voler les cookies de l'utilisateur
+D ) À écouter la carte réseau
+(Q9) À quoi sert traditionnellement une API KEY (plusieurs réponses possibles) ?AD
+A ) À ne pas renvoyer systématiquement le couple email/mot de passe
+B ) À crypter les informations en BDD
+C ) À vérifier l'intégrité des données insérées en BDD
+D ) À s'identifier rapidement
+(Q10) Qui sont les meilleurs, évidemment c'est... (plusieurs réponses possibles) ?BD
+A ) Les verts
+B ) L'équipe pédagogique
+C ) Les joueurs du PSG
+D ) Les métalleux
