@@ -1,0 +1,28 @@
+<div class="col">
+    <h2 class="text-center">Ajouter un Titre</h2>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="artist">Artist:</label>
+        <input formControlName="artist" placeholder="Artist" name="artist" class="form-control" id="artist" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="album">Album:</label>
+        <input formControlName="album" placeholder="Album" name="album" class="form-control" id="album" required>
+      </div>
+
+      <div class="form-group">
+          <label for="img">Image:</label>
+          <input formControlName="img" placeholder="Link" name="img" class="form-control" id="img" required>
+        </div>
+  
+      <button class="btn btn-success">Accepter</button>
+      <button class="btn btn-primary" routerLink="list-playlist">Annuler</button>
+    </form>
+  </div>

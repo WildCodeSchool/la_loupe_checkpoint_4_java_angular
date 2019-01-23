@@ -1,0 +1,30 @@
+<section>
+  <div class="container">
+      <button class="btn btn-primary" (click)="addPlaylist()">Ajouter Titre</button>
+      <div class="row">
+          <div class="column" *ngFor="let playlist of playlists">
+              <div class="box">
+                  <div class="title">
+                      <i class="fa fa-paper-plane"></i>
+                      <h2>{{playlist.name}}</h2>
+                  </div>
+                  <div class="price">
+                      <img src="{{playlist.img}}">
+                  </div>
+                  <div class="option">
+                      <ul>
+                          <li><i class="fa fa-check"></i>{{playlist.artist}}</li>
+                          <li><i class="fa fa-check"></i>{{playlist.album}}</li>
+                      </ul>
+                  </div>
+                  <button class="btn btn-success" (click)="editPlaylist(playlist)">
+                   Modifier
+                  </button>
+                  <button class="btn btn-danger" (click)="deletePlaylist(playlist)">
+                    Supprimer
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
