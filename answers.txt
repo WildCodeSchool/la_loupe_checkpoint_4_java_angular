@@ -1,0 +1,11 @@
+Q1.A,D
+Q2.A,C,D
+Q3.B,
+Q4.A,C,D
+Q5.C
+Q6.A,B
+Q7.D
+Q8.A
+Q9.A,D
+Q10.A,B,C,D
+
