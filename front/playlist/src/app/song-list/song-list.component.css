@@ -1,0 +1,9 @@
+img{
+    width: 150px;
+    height: 150px;
+}
+
+table{
+    height: 80vh;
+    overflow: scroll;
+}

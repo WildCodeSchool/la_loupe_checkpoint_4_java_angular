@@ -1,0 +1,36 @@
+<div class="wrap-all border p-3">
+  <h2>Modifier ou supprimer une chanson</h2>
+
+  <div class="form-group">
+    <label for="identifiant">Identifiant de la chanson</label>
+    <input type="text" class="form-control" name="identifiant" id="identifiant" aria-describedby="Song id text input"
+      placeholder="" [(ngModel)]="currentSongId" required>
+  </div>
+  <button type="submit" class="btn btn-primary d-block" (click)="selectSong()">Chercher la chanson</button>
+
+  <div *ngIf="currentSong.name != null && currentSong != ''">
+    <ul>
+      <li>Name : {{currentSong.name}}</li><i class="fas fa-exchange-alt" (click)="switchTitleTmpSong()"></i>
+      <input type="text" class="form-control" name="tmpSong-name" id="tmpSong-name" aria-describedby="Song id text input"
+        placeholder="Modifier le titre" [(ngModel)]="tmpSong.name" *ngIf="display_title_tmpSong">
+
+      <li>Album : {{currentSong.album}}</li><i class="fas fa-exchange-alt" (click)="switchAlbumTmpSong()"></i>
+      <input type="text" class="form-control" name="identifiant" id="identifiant" aria-describedby="Song id text input"
+        placeholder="Modifier l'album" [(ngModel)]="tmpSong.album" *ngIf="display_album_tmpSong">
+
+      <li>Artist : {{currentSong.artist}}</li><i class="fas fa-exchange-alt" (click)="switchArtistTmpSong()"></i>
+      <input type="text" class="form-control" name="identifiant" id="identifiant" aria-describedby="Song id text input"
+        placeholder="Modifier l'artiste" [(ngModel)]="tmpSong.artist" *ngIf="display_artist_tmpSong">
+
+      <li>Image URL : {{currentSong.img}}</li><i class="fas fa-exchange-alt" (click)="switchUrlTmpSong()"></i>
+      <input type="text" class="form-control" name="identifiant" id="identifiant" aria-describedby="Song id text input"
+        placeholder="Modifier l'URL de l'image" [(ngModel)]="tmpSong.img" *ngIf="display_url_tmpSong">
+    </ul>
+  </div>
+
+  <button type="submit" class="btn btn-warning" (click)="updateSong()">Mettre à jour la chanson</button>
+
+  <button type="submit" class="btn btn-danger" (click)="deleteSong()">Effacer la chanson</button>
+
+
+</div>
