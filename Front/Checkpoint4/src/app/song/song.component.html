@@ -1,0 +1,40 @@
+<div *ngIf="songData != null" class="song">
+  <img src="{{songData.img}}">
+
+  <h2>{{songData.name}}</h2>
+  <button class="edit-name" (click)="editName(songData.statement)">Editer le nom de la chanson</button>
+  <div class="input-group mb-3" *ngIf="editNameClicked">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Nom : </span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="songData.name">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="validateName(songData.name)">Valider</button>
+    </div>
+  </div>
+
+  <h2>{{songData.artist}}</h2>
+  <button class="edit-artist" (click)="editArtist(songData.statement)">Editer le nom de l'artiste</button>
+  <div class="input-group mb-3" *ngIf="editArtistClicked">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Artiste : </span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="songData.artist">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="validateArtist(songData.artist)">Valider</button>
+    </div>
+  </div>
+
+  <h3>{{songData.album}}</h3>
+  <button class="edit-name" (click)="editAlbum(songData.statement)">Editer le nom de l'album</button>
+  <div class="input-group mb-3" *ngIf="editAlbumClicked">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Album : </span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="songData.album">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="validateAlbum(songData.album)">Valider</button>
+    </div>
+  </div>
+
+</div>

@@ -1,5 +1,7 @@
 package fr.wildcodeschool.Checkpoint4.controllers;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import fr.wildcodeschool.Checkpoint4.entities.Song;
@@ -47,6 +51,29 @@ public class SongController {
 	@PostMapping("/songs")
 	public Song create(@RequestBody Song p_song) {
 		return dao.save(p_song);
+	}
+	
+	@PostMapping("/songs/uploadImage")
+	public boolean uploadImage(@RequestParam MultipartFile imageSent) {
+
+		// Si le fichier est de type image
+		if (imageSent.getContentType().startsWith("image/")) {
+			Song img = dao.findById((long) 1).get();
+			// Veuillez changer le chemin vers le projet angular
+			String path = "/home/aurelien/Documents/Checkpoint/4thCheckpoint/la_loupe_checkpoint_4_java_angular/Front/Checkpoint4/src/assets/image/"
+					+ imageSent.getOriginalFilename();
+			try {
+				imageSent.transferTo(new File(path));
+				String relativePath = path.substring(path.indexOf("src"), path.length());
+				img.setImg(relativePath);
+				dao.save(img);	
+			} catch (IllegalStateException | IOException e) {
+				return false;
+			}
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@PutMapping("/songs/{id}")

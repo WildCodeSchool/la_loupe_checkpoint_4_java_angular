@@ -1,0 +1,42 @@
+<div class="container">
+  <h1 class="title">Playlist</h1>
+  <div class="existing-songs">
+    <div *ngFor="let current of songs">
+      <hr />
+      <app-song class="song" [songData]="current"></app-song>
+      <button class="delete-song" (click)="deleteSong(current)">Supprimer</button>
+    </div>
+  </div>
+  <button id="ajout-input" class="btn btn-general ajout-input newSong" *ngIf="!ajoutSongClicked" (click)="beginNewSong()">Ajouter
+    une chanson</button>
+  <div class="new-songs" *ngIf="ajoutSongClicked">
+    <div class="input-group mb-3" *ngIf="!textSongClicked">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nom de la chanson : </span>
+      </div>
+      <input type="text" class="form-control fontSong" [(ngModel)]="newSong.name">
+    </div>
+
+    <div class="input-group mb-3" *ngIf="!textSongClicked">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nom de l'artiste : </span>
+      </div>
+      <input type="text" class="form-control fontSong" [(ngModel)]="newSong.artist">
+    </div>
+
+    <div class="input-group mb-3" *ngIf="!textSongClicked">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Nom de l'album : </span>
+      </div>
+      <input type="text" class="form-control fontSong" [(ngModel)]="newSong.album">
+    </div>
+
+    <p class="DescritionZone">Image: </p>
+    <form id="songImg">
+      <input class="btn btn-default" type="file" name="imageSent" />
+    </form>
+    <div class="Space1"></div>
+    <button class="send-song" (click)="createSong(current)">Envoyer</button>
+  </div>
+
+</div>
