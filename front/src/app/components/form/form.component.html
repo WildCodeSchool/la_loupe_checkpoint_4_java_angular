@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h2>Add/Modify a song</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form action="submit">
+        <div class="form-group">
+          <label for="name">Name of the song:</label>
+          <input class="form-control" type="text" name="name" [(ngModel)]="song.name">
+        </div>
+        <div class="form-group">
+          <label for="artist">Artist:</label>
+          <input class="form-control" type="text" name="artist" [(ngModel)]="song.artist">
+        </div>
+        <div class="form-group">
+          <label for="album">Album:</label>
+          <input class="form-control" type="text" name="album" [(ngModel)]="song.album">
+        </div>
+        <div class="form-group">
+          <label for="album">Cover link:</label>
+          <input class="form-control" type="text" name="img" [(ngModel)]="song.img">
+        </div>
+        <div class="btn-group">
+          <button type="submit" (click)="addSong(song)" class="btn">Add</button>
+          <button type="reset" class="btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">My Playlist</h2>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">N°</th>
+            <th scope="col">Name</th>
+            <th scope="col">Artist</th>
+            <th scope="col">Album</th>
+            <th scope="col">Cover</th>
+            <th scope="col">Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let song of songs; index as i">
+            <th>{{ i + 1 }}</th>
+            <th>{{ song.name }}</th>
+            <th>{{ song.artist }}</th>
+            <th>{{ song.album }}</th>
+            <th><img src="{{ song.img }}" alt="{{ song.name }}" width="50px"></th>
+            <th class="btn-group">
+              <button class="btn" (click)="modifySong(song)"><i class="fas fa-pen-square"></i></button>
+              <button class="btn" (click)="deleteSong(song)"><i class="fas fa-times-circle"></i></button>              
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

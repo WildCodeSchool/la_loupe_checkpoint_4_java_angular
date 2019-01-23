@@ -1,0 +1,13 @@
+h1 {
+  font-family: "bebas";
+  color: rgb(218, 218, 218);
+}
+
+.fas {
+  animation: spin 4s infinite linear; 
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
