@@ -1,0 +1,16 @@
+<!-- <div class="card"> -->
+   <h3 class="card-header text-center">{{data.name}}</h3>
+   <img class="card-img-top d-block mx-auto" src={{data.img}} alt="song cover art"/>
+   <div class="card-body">
+      <p class="text-center">Musique : <b>{{data.artist}}</b>, {{data.name}}</p>
+      <p class="text-center">Album : {{data.album}}</p>
+      <div *ngIf="displayForm">
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="data.name" placeholder="Titre"/>
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="data.artist" placeholder="Auteur"/>
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="data.album" placeholder="Album"/>
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="data.img" placeholder="Image"/>
+         <button type="button" class="btn btn-primary col-8 offset-2 mt-1" (click)="submitChange()">Modifier</button>
+      </div>
+   </div>
+   <button type="button" class="btn btn-warning col-10 offset-1 mt-3" (click)="showForm()">Formulaire de modification</button>
+<!-- </div> -->

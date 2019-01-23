@@ -1,0 +1,18 @@
+<section class="card-columns container mt-5">
+
+   <div class="card text-white bg-secondary">
+      <h3 class="card-header text-center">Ajouter à la playlist</h3>
+      <div class="card-body">
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="songToAdd.name" placeholder="Titre"/>
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="songToAdd.artist" placeholder="Auteur"/>
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="songToAdd.album" placeholder="Album"/>
+         <input class="col-8 offset-2 mt-2" [(ngModel)]="songToAdd.img" placeholder="Image"/>
+         <button type="button" class="btn btn-success col-10 offset-1 mt-2" (click)="addSong()">Ajouter</button>
+      </div>
+   </div>
+
+   <div class="card text-white bg-secondary" *ngFor="let current of songs">
+      <app-song [data]="current"></app-song>
+      <button type="button" class="btn btn-danger col-10 offset-1 mt-2 mb-3" (click)="deleteSong(current.id)">Supprimer</button>
+   </div>
+</section>
