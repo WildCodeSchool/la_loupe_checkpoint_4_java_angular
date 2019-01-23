@@ -25,7 +25,7 @@ Tu dois répondre aux questions suivantes, note tes réponses dans un fichier **
 - D ) La réponse D 
 
 
-#### (Q2) A contrario, est une application ... ?
+#### (Q2) A contrario, une application Angular est une application ... ?
 
 
 - A ) Client
