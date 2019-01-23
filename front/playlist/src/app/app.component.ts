@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Playlist } from "./playlist";
 import { PlaylistService } from "./playlist.service";
+import { FileUploadService } from "./file-upload.service";
 
 @Component({
   selector: "app-root",
@@ -16,8 +17,16 @@ export class AppComponent implements OnInit {
   public playlistById;
   public Id: number;
 
-  constructor(param_service: PlaylistService) {
+  // partie envoie de fichier
+  private uploadService: FileUploadService;
+  public currentFile: File;
+
+  constructor(
+    param_service: PlaylistService,
+    param_service_upload: FileUploadService
+  ) {
     this.playService = param_service;
+    this.uploadService = param_service_upload;
     this.Id = 0;
     this.newChan = { name: "", artist: "", album: "", img: "" };
     this.updateChan = { name: "", artist: "", album: "", img: "" };
@@ -39,10 +48,10 @@ export class AppComponent implements OnInit {
     ) {
       alert("Merci de bien vouloir remplir les champs demandés.");
     } else {
-      // this.doUpload();
-      console.log(this.newChan);
+      this.doUpload();
       this.playService.addChan(this.newChan).subscribe((data: Playlist) => {
         this.ngOnInit();
+        // on vide la variable
         this.newChan = { name: "", artist: "", album: "", img: "" };
       });
     }
@@ -55,17 +64,19 @@ export class AppComponent implements OnInit {
   }
 
   public putUpdate(p_chan: Playlist, p_id): void {
-    // if (this.newActualite.photo != "") {
-    //   this.doUpload();
-    //   this.updateActu.photo = this.newActualite.photo;
-    //   this.actuService.editActu(p_id, p_new).subscribe((data: Actu) => {
-    //     this.ngOnInit();
-    //     this.updateActu = { photo: "", texte: "", title: "" };
-    //     this.newActualite.photo = "";
-    //   });
-    // }
+    if (this.newChan.img != "") {
+      this.doUpload();
+      this.updateChan.img = this.newChan.img;
+      this.playService.editChan(p_id, p_chan).subscribe((data: Playlist) => {
+        this.ngOnInit();
+        // on vide les variables
+        this.updateChan = { name: "", artist: "", album: "", img: "" };
+        this.newChan.img = "";
+      });
+    }
     this.playService.editChan(p_id, p_chan).subscribe((data: Playlist) => {
       this.ngOnInit();
+      // on vide la variable
       this.updateChan = { name: "", artist: "", album: "", img: "" };
     });
   }
@@ -77,7 +88,23 @@ export class AppComponent implements OnInit {
   public delete(p_chan): void {
     this.playService.deleteChan(p_chan).subscribe((data: boolean) => {
       this.ngOnInit();
+      // on vide la variable
       this.Id = 0;
     });
+  }
+
+  // fonction envoie de fichier
+  public doUpload() {
+    this.uploadService.upload(this.currentFile).subscribe((data: any) => {
+      console.log(data);
+    });
+  }
+
+  public onFileChange(param_event): void {
+    const files: FileList = param_event.target.files as FileList;
+    if (files.length > 0) {
+      this.currentFile = files[0];
+      this.newChan.img = "assets/" + this.currentFile.name;
+    }
   }
 }

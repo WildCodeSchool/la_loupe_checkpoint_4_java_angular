@@ -44,13 +44,9 @@
           <input [(ngModel)]="newChan.name" type="name" class="form-control" id="name" aria-describedby="name"
             placeholder="Nom" />
         </div>
-        <!-- <div class="form-group">
-          <label for="photo">Ajouter une Photo</label>
-          <input (change)="onFileChange($event)" type="file" class="form-control-file" id="photo">
-        </div> -->
         <div class="form-group">
-          <label for="img">Url Image</label>
-          <input [(ngModel)]="newChan.img" name="artist" id="img" class="form-control" placeholder="Url Image" />
+          <label for="img">Ajouter une image</label>
+          <input (change)="onFileChange($event)" type="file" class="form-control-file" id="img">
         </div>
         <div class="form-group">
           <label for="artist">Artiste</label>
@@ -76,7 +72,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="creation">Ajouté une chanson</h5>
+        <h5 class="modal-title" id="creation">Modifier une chanson</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -86,13 +82,9 @@
           <label for="name">Nom</label>
           <input [(ngModel)]="updateChan.name" type="name" class="form-control" id="name" aria-describedby="name" value="{{playlistById.name}}" />
         </div>
-        <!-- <div class="form-group">
-          <label for="photo">Ajouter une Photo</label>
-          <input (change)="onFileChange($event)" type="file" class="form-control-file" id="photo">
-        </div> -->
         <div class="form-group">
-          <label for="img">Url Image</label>
-          <input [(ngModel)]="updateChan.img" name="artist" id="img" class="form-control" value="{{playlistById.img}}" />
+          <label for="img">Ajouter une image</label>
+          <input (change)="onFileChange($event)" type="file" class="form-control-file" id="img">
         </div>
         <div class="form-group">
           <label for="artist">Artiste</label>
@@ -106,7 +98,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
         <button (click)="putUpdate(updateChan, playlistById.id)" type="button" class="btn btn-primary" data-dismiss="modal"
-          data-dismiss="modal">Ajouter</button>
+          data-dismiss="modal">Modifier</button>
       </div>
     </div>
   </div>
