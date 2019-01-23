@@ -6,31 +6,32 @@ Sérieux ? Je dois écrire une doc ? Mais c'est ch... !
 
 ### Pré-requis
 
-- MySQL
-- Apache Tomcat
-- Maven
+- Node.js
+- npm
+- Angular CLI
+
+Voir [le guide d'installation d'Angular](https://angular.io/guide/quickstart).
 
 ### Installation
 
-1) Téléchargez le projet ou entrez dans le terminal :
+1. Téléchargez le projet ou entrez dans le terminal :
 ```Shell
 git clone https://github.com/WildCodeSchool/la_loupe_checkpoint_4_java_angular.git
-cd la_loupe_checkpoint_4_java_angular
+cd la_loupe_checkpoint_4_java_angular/Definitly_NotSpotify/front
 git checkout Post_Aymeric_LaLoupe_2018
 ```
-2) Créez un utilisateur et une base de donnée pour l'application :
+2. Instalez les dépendances. Entrez dans le dossier téléchargé et entrez le terminal les commandes :
 ```Shell
-mysql -u root -p
+npm install
+npm install bootstrap --save
+npm install jquerry --save
+npm install poppers.js --save
 ```
 
-```SQL
-CREATE DATABASE dixheures;
-CREATE USER "il-est-lor"@"localhost" IDENTIFIED BY "L_0r_d3_Se_rev3!lLeR_!";
-GRANT ALL ON dixheures.* TO 'il-est-lor'@'localhost'; 
-```
-## Lancement
+## Compiler le site
 
 Lancez le serveur et la compilation depuis le dossier téléchargé avec la commande :
 ```Shell
-mvn spring-boot:run
+cd la_loupe_checkpoint_4_java_angular/Definitly_NotSpotify/front
+ng serve -o
 ```
