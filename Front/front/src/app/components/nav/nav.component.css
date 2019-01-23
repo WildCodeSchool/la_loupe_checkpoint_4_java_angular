@@ -1,0 +1,36 @@
+.nav{
+    background-color: black;
+}
+p{
+    color: white;
+}
+.text-logo{
+    width: 8vw;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-top: 0.1rem;
+}
+.logo-spoti{
+    font-size: 1.2rem;
+}
+button{
+    font-size: 0.85rem;
+    color: rgb(149, 149, 149);
+    border: none;
+    background: rgba(0, 0, 0, 0)
+}
+button:hover{
+    transition: 0.4s;
+    color: #fff;
+}
+.listen p{
+    font-size: 0.70rem;
+    color: rgb(149, 149, 149);
+}
+ul{
+    list-style: none;
+}
+ul:hover{
+    transition: 0.4s;
+    color: #fff;
+}

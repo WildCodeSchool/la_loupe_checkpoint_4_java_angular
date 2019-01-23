@@ -1,0 +1,91 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 mb-3 mt-3 title-dashboard">
+      <h1>Mes Musiques</h1>
+    </div>
+    <div class="offset-1 col-10 top-table d-flex justify-content-center">
+      <table class="table">
+        <thead class="theadcolor">
+          <th scope="col"></th>
+          <th scope="col">NOM</th>
+          <th scope="col">ARTISTE</th>
+          <th scope="col">ALBUM</th>
+          <th scope="col">COVER</th>
+          <th scope="col"></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let music of musics; index as i">
+            <td> {{ i + 1 }} </td>
+            <td> {{ music.name }} </td>
+            <td> {{ music.artist }} </td>
+            <td> {{ music.album }} </td>
+            <td> <img src="{{music.img}}" width="50" alt=""></td>
+            <td>
+              <button class="edit ml-2 mr-5" title="Modifier cette musique" (click)="modifyMusic(music.id)"><i class="far fa-edit"></i></button>
+              <button class="delete ml-5" title="Supprimer cette musique" (click)="deleteMusic(music.id)"><i class="far fa-times-circle"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="offset-1 col-10 add-title mt-4 mb-3">
+      <h2>Ajouter/modifier une musique</h2>
+    </div>
+    <div class="offset-1 col-10">
+      <div class="row">
+        <!--LEFT PART-->
+        <div class="col-6">
+          <div class="d-flex justify-content-between">
+            <div class="col-6">
+              <label for="name">Nom de la musique :</label>
+            </div>
+            <div class="col-6">
+              <input id="name" placeholder="Nom de la musique" [(ngModel)]="music.name" type="text" name="name" #name="ngModel">
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-flex justify-content-between">
+            <div class="col-6">
+              <label for="artist">Nom de l'artiste :</label>
+            </div>
+            <div class="col-6">
+              <input id="artist" placeholder="Nom de l'artiste" [(ngModel)]="music.artist" type="text" name="artist" #artist="ngModel">
+            </div>
+          </div>
+        </div>
+        <!--RIGHT PART-->
+        <div class="col-6">
+          <div class="d-flex justify-content-between">
+            <div class="col-6">
+              <label for="album">Nom de l'album :</label>
+            </div>
+            <div class="col-6">
+              <input id="album" placeholder="Nom de l'album" [(ngModel)]="music.album" type="text" name="album" #album="ngModel">
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="d-flex justify-content-between">
+              <div class="col-6">
+                <label for="img">Lien de l'image :</label>
+              </div>
+              <div class="col-6">
+                <input id="img" placeholder="Lien de l'image" [(ngModel)]="music.img" type="text" name="img" #img="ngModel">
+              </div>
+            </div>
+        </div>
+        <div class="offset-1 col-10 d-flex justify-content-around mt-4">
+          <button type="reset" class="bot-button" (click)="refresh()"><i class="fas fa-ban pr-2"></i>ANNULER</button>
+          <ng-container *ngIf="add; else editMode">
+            <button type="submit" class="bot-button" (click)="addMusic()"><i class="far fa-check-square pr-2"></i>AJOUTER</button> 
+          </ng-container>
+          <ng-template #editMode>
+            <button type="submit" class="bot-button" (click)="updateMusic()"><i class="far fa-check-square pr-2"></i>VALIDER</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.bg-grey{
+    background-color: #1e1e1e;
+}
+.bg-green{
+    background-color: rgb(105, 168, 105);
+}
