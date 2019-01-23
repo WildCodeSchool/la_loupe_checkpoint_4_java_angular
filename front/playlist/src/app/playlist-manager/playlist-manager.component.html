@@ -1,0 +1,67 @@
+<div class="mainContainer" *ngIf="songs != null">
+
+  <div class="addSong">
+    <form name="addSong">
+      <h2>Add a new song :</h2>
+      <div class="formBlock">
+        <label>Name :</label>
+        <input [(ngModel)]="newSong.name" name="name"/>
+      </div>
+      <div class="formBlock">
+        <label>Artist :</label>
+        <input [(ngModel)]="newSong.artist" name="artist"/>
+      </div>
+      <div class="formBlock">
+        <label>Album :</label>
+        <input [(ngModel)]="newSong.album" name="album"/>
+      </div>
+      <div class="formBlock">
+        <label>Img (url) :</label>
+        <input [(ngModel)]="newSong.img" name="img"/>
+      </div>
+      <button (click)=create()>ADD</button>
+    </form>
+  </div>
+
+  <div class="song" *ngFor="let currentSong of songs">
+
+    <div class="songView">
+      <div class="content">
+        <img src="{{currentSong.img}}">
+        <h2>{{currentSong.name}}</h2>
+        <p>{{currentSong.artist}} - {{currentSong.album}}</p>
+      </div>
+      <div class="actions">
+        <div class="buttonBox">
+          <button class="update" (click)="displayUpdateForm(currentSong.id)"></button>
+        </div>
+        <div class="buttonBox">
+          <button class="delete" (click)="delete(currentSong)"></button>
+        </div>
+      </div>
+    </div>
+
+    <div id="{{currentSong.id}}" class="updateContainer">
+      <form name="updateForm">
+        <div class="formBlock">
+          <label>Name :</label>
+          <input [(ngModel)]="currentSong.name" name="name"/>
+        </div>
+        <div class="formBlock">
+          <label>Artist :</label>
+          <input [(ngModel)]="currentSong.artist" name="artist"/>
+        </div>
+        <div class="formBlock">
+          <label>Album :</label>
+          <input [(ngModel)]="currentSong.album" name="album"/>
+        </div>
+        <div class="formBlock">
+          <label>Img (url) :</label>
+          <input [(ngModel)]="currentSong.img" name="img"/>
+        </div>
+        <button (click)=update(currentSong)>UPDATE</button>
+      </form>
+    </div>
+    
+  </div>
+</div>
