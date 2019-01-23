@@ -3,7 +3,8 @@ li a {
 }
 
 h1 {
-    color: goldenrod;
+    color: white;
+    text-shadow: 0 0 300px white, 0 0 20px purple, 10px 10px 40px red;
 }
 h2{
     color: whitesmoke;
