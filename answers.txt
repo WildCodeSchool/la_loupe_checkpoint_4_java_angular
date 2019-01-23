@@ -1,0 +1,35 @@
+(Q1) Une application Spring Boot s'exécute... ?
+A ) Sur un serveur
+
+(Q2) A contrario, une application Angular est une application ... ?
+A ) Client
+
+(Q3) Spring boot et Angular sont des... ?
+B ) Frameworks
+
+(Q4) À quoi sert un Framework (plusieurs réponses possibles)... ?
+A ) À donner un cadre de travail
+C ) À être plus productif
+D ) À faciliter la maintenance du code
+
+(Q5) L'annotation @Entity sert à définir... ?
+C ) Une entité
+
+(Q6) L'annotation @OneToMany sert à (plusieurs réponses possibles)... ?
+A ) Créer une relation entre deux entités
+B ) Faire une jointure
+
+(Q7) Quel acronyme ci-dessous ne représente PAS une attaque ?
+A ) CSRF
+B ) XSS
+C ) SQL Injection
+
+(Q8) En quoi consiste une attaque de type CSRF ?
+A ) À piéger l'internaute en lui faisant exécuter une requête à son insu, avec ses propres droits.
+
+(Q9) À quoi sert traditionnellement une API KEY (plusieurs réponses possibles) ?
+A ) À ne pas renvoyer systématiquement le couple email/mot de passe
+D ) À s'identifier rapidement
+
+(Q10) Qui sont les meilleurs, évidemment c'est... (plusieurs réponses possibles) ?
+A ) Les verts
