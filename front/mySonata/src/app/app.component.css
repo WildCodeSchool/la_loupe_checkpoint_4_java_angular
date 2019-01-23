@@ -1,11 +1,20 @@
-li a {
-    color: brown;
+*{
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
 }
 
 h1 {
     color: white;
-    text-shadow: 0 0 300px white, 0 0 20px purple, 10px 10px 40px red;
+    text-shadow: 0 0 30px rgb(182, 24, 24);
+    
 }
 h2{
     color: whitesmoke;
+}
+figure {
+    margin: 0;
 }
