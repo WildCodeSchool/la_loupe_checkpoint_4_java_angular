@@ -69,7 +69,7 @@ public class PlaylistController {
 			}
 			
 			if (playl.getImg() != "") {
-				current.setAlbum(playl.getImg());
+				current.setImg(playl.getImg());
 			}
 			
 			return playRespo.save(current);		
