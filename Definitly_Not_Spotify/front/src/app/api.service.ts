@@ -11,10 +11,29 @@ import { environment } from "../environments/environment"
 })
 export class ApiService {
 
+   private key:string = "";
+   private token:string = "";
+
    private client:HttpClient;
 
    constructor(client:HttpClient) {
       this.client = client;
+   }
+
+   public getToken() {
+      return this.token;
+   }
+
+   public getKey() {
+      return this.key;
+   }
+
+   public setToken(jambon:string) {
+      this.token = jambon;
+   }
+
+   public setKey(pate:string) {
+      this.key = pate;
    }
 
   public apiGet(request:string):Observable<any>{
@@ -63,5 +82,5 @@ export class ApiService {
       return promise.pipe( map( treatment )).pipe(catchError(() => {
          return throwError("DELETE request failed");
       }));
-}
+   }
 }
