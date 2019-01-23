@@ -1,27 +1,37 @@
 # Dixheures
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+Sérieux ? Je dois écrire une doc ? Mais c'est ch... !
 
-## Development server
+## Execution
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Pré-requis
 
-## Code scaffolding
+- Node.js
+- npm
+- Angular CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Voir [le guide d'installation d'Angular](https://angular.io/guide/quickstart).
 
-## Build
+### Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Téléchargez le projet ou entrez dans le terminal :
+```Shell
+git clone https://github.com/WildCodeSchool/la_loupe_checkpoint_4_java_angular.git
+cd la_loupe_checkpoint_4_java_angular/Definitly_NotSpotify/front
+git checkout Post_Aymeric_LaLoupe_2018
+```
+2. Instalez les dépendances. Entrez dans le dossier téléchargé et entrez le terminal les commandes :
+```Shell
+npm install
+npm install bootstrap --save
+npm install jquerry --save
+npm install poppers.js --save
+```
 
-## Running unit tests
+## Compiler le site
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Lancez le serveur et la compilation depuis le dossier téléchargé avec la commande :
+```Shell
+cd la_loupe_checkpoint_4_java_angular/Definitly_NotSpotify/front
+ng serve -o
+```
