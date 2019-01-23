@@ -1,0 +1,29 @@
+<header>
+    <h1><span class="blue">e</span>Tunes</h1>
+  </header>
+<div id="playlist-background">
+  <div class="music-container" *ngFor="let currentSong of songList">
+    <p *ngIf="!currentSong.updateButton">{{currentSong.name}}</p>
+    <input *ngIf="currentSong.updateButton"[(ngModel)]="updateName"/>
+    <p *ngIf="!currentSong.updateButton" class="infos">{{currentSong.artist}}</p>
+    <input *ngIf="currentSong.updateButton" [(ngModel)]="updateArtist"/>
+    <p *ngIf="!currentSong.updateButton" class="infos">{{currentSong.album}}</p>
+    <input *ngIf="currentSong.updateButton" [(ngModel)]="updateAlbum"/>
+    <div class="buttons-crud">
+        <button *ngIf="!currentSong.updateButton" class="blueb black" (click)="currentSong.updateButton = true" (click)="fillUpdateInput(currentSong.name, currentSong.artist, currentSong.album)">Modifier</button>
+      <button *ngIf="currentSong.updateButton" class="black" (click)="updateCurrentSong(currentSong.id, currentSong)">Enregister</button>
+      <button *ngIf="currentSong.updateButton" class="redb" (click)="deleteCurrentSong(currentSong.id)">Supprimer</button>
+    </div>
+  </div>
+  <div class="new-music-container">
+    <div *ngIf="!newMusicInputs" (click)="newMusicInputs = true" class="add-song">+ Ajouter une chanson</div>
+      <div *ngIf="newMusicInputs" class="new-music-inputs">
+          <input [(ngModel)]="newName"/>
+          <input [(ngModel)]="newArtist"/>
+          <input [(ngModel)]="newAlbum"/>
+          <div class="button-new">
+              <button class="blueb black" (click)="addSong()">Ajouter</button>
+          </div>
+      </div>
+    </div>
+</div>

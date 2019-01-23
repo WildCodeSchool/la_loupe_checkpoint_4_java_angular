@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+}
+
+/* font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Staatliches', cursive; */
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #fff;
+    
+}
+
+h1, h2 {
+    
+    font-family: 'Staatliches', cursive;
+    text-transform: initial;
+}
+p {
+}
+
+.blue {
+    color: #05F3E9;
+}
+.blueb {
+    background: #05F3E9;
+}
+.redb{
+    background: #F70065;
+}
+.black {
+    color: #000;
+}
+
+.infos {
+    font-weight:  300;
+}

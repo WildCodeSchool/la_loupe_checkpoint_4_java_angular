@@ -1,0 +1,94 @@
+#playlist-background {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+}
+
+header{
+    width: 80%;
+    height: 10vh;
+    padding: 3vh 10% 3vh 10%;
+    display: flex;
+    align-items: center;
+    background: red;
+    background-color: #000;
+    border-bottom: #05F3E9 solid 3px;
+}
+
+.music-container, .new-music-container{
+    width: 60%;
+    border-bottom: #fff solid 1px;
+    padding: 0.5em 3% 0.5em 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttons-crud{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button {
+    height: 50%;
+    padding: 0.2em 10% 0.2em 10%;
+    border: none;
+    margin-right: 5%;
+    font-weight: 700;
+}
+button:hover {
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+    transform: scale(1.01);
+}
+
+input{
+    height: 2em;
+    margin: 1em 0 1em 0;
+    border: solid 1px #fff;
+    background: #000;
+    color: #fff;
+    width: 20%;
+    padding: 0.2em 1em 0.2em 1em;
+}
+
+input:focus {
+    outline: none;
+}
+
+.new-music-container{
+    height: 2.5em;
+    align-items: center;
+}
+
+.new-music-inputs{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add-song{
+    transition: 0.3s
+}
+.add-song:hover{
+    cursor: pointer;
+    color:#05F3E9;
+}
+.button-new{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.button-new > button {
+    height: 70%;
+}
