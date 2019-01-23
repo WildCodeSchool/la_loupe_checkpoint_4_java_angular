@@ -1,0 +1,14 @@
+.albumImg{
+    width: 5em;
+}
+td,th{
+    border: 1px solid black;
+}
+.fas{
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.fa-plus{
+    font-size: 5em;
+    cursor: pointer;
+}

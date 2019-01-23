@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">titre</label>
+					<input [(ngModel)]="newSong.name" name="name" type="text" class="form-control" id="name">
+				</div>
+				<div class="form-group">
+						<label for="exampleInputEmail1">artist</label>
+						<input [(ngModel)]="newSong.artist" name="artist" type="text" class="form-control" id="artist">
+				</div>
+				<div class="form-group">
+						<label for="exampleInputEmail1">album</label>
+						<input [(ngModel)]="newSong.album" name="album" type="text" class="form-control" id="album" >
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">image</label>
+						<input [(ngModel)]="newSong.img" name="image" type="text" class="form-control" id="image" >
+					</div>
+				<div class="from-group text-center">
+					<a (click)="createArticle(newSong.name, newSong.artist, newSong.album, newSong.img)" routerLink="/">
+						<button type="submit" class="btn btn-secondary">
+							Valider
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

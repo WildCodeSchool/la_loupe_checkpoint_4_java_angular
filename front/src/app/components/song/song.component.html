@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+				<table style="width:100%">
+					<tr>
+						<th class="text-center">titre</th>
+						<th class="text-center">artiste</th> 
+						<th class="text-center">album</th>
+						<th class="text-center">photo</th>
+						<th class="text-center">Afficher</th>
+					</tr>
+					<tr *ngFor="let currentSong of songsTab" class="from-group">
+						<td>
+							<span class="d-flex justify-content-center">
+								{{ currentSong.name }}
+							</span>
+						</td>
+						<td>
+							<span class="d-flex justify-content-center">
+								{{ currentSong.artist }}
+							</span>
+						</td>
+						<td>
+							<span class="d-flex justify-content-center">
+								{{ currentSong.album }}
+							</span>
+						</td>
+						<td class="text-center">
+							<img class="albumImg" [src]="currentSong.img" alt="">
+						</td>
+						<td>
+							<a (click)="sendSongId(currentSong.id)" routerLink="/show" 
+								class="d-flex justify-content-center">
+								<i class="fas fa-eye"></i>
+							</a>
+						</td>
+					</tr>
+				</table>
+		</div>
+
+		<div class="col-12 mt-5 text-center">
+			<h5>Ajouter une nouvelle musique</h5>
+			<a href="/create">
+				<i class="fas fa-plus"></i>
+			</a>
+		</div>
+	</div>
+</div>
