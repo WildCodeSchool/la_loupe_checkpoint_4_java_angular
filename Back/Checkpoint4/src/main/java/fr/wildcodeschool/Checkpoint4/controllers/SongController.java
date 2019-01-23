@@ -54,25 +54,30 @@ public class SongController {
 	}
 	
 	@PostMapping("/songs/uploadImage")
-	public boolean uploadImage(@RequestParam MultipartFile imageSent) {
+	public boolean uploadImage(@RequestParam MultipartFile imageSent) throws Exception {
+		System.out.println("Dans uploadImage");
 
 		// Si le fichier est de type image
 		if (imageSent.getContentType().startsWith("image/")) {
 			Song img = dao.findById((long) 1).get();
 			// Veuillez changer le chemin vers le projet angular
-			String path = "/home/aurelien/Documents/Checkpoint/4thCheckpoint/la_loupe_checkpoint_4_java_angular/Front/Checkpoint4/src/assets/image/"
+			String path = "/home/aurelien/Documents/Checkpoint/4thCheckpoint/la_loupe_checkpoint_4_java_angular/Front/Checkpoint4/src/assets/images"
 					+ imageSent.getOriginalFilename();
+			System.out.println("Dans 1er If");
 			try {
+				System.out.println("Dans try");
 				imageSent.transferTo(new File(path));
 				String relativePath = path.substring(path.indexOf("src"), path.length());
 				img.setImg(relativePath);
 				dao.save(img);	
 			} catch (IllegalStateException | IOException e) {
-				return false;
+				throw new ResponseStatusException(HttpStatus.EXPECTATION_FAILED, "Could not save image");
+				//return false;
 			}
 			return true;
 		} else {
-			return false;
+			throw new ResponseStatusException(HttpStatus.EXPECTATION_FAILED, "Could not save image 2");
+			//return false;
 		}
 	}
 

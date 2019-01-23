@@ -60,7 +60,6 @@ export class SongService {
   }
 
   public addImg(param: FormData) {
-    const url = environment.domain + "/songs/uploadImage";
-    return this.songs.post(url, param);
+    return this.songs.post(this.url + "uploadImage/", param);
   }
 }

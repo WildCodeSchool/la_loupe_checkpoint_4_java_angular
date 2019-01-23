@@ -74,12 +74,12 @@ export class AppComponent {
     const inputImage: HTMLFormElement = <HTMLFormElement>document.getElementById('songImg');
     let ImageFile: FormData = new FormData(inputImage);
     this.songService.addImg(ImageFile).subscribe(
-      (paramImageOk: any) => {
+      (paramImage: any) => {
 
-        if (paramImageOk == true) {
+        if (paramImage == true) {
           alert("Votre image à bien été mise à jour !");
         } else {
-          alert("Format incorrecte !");
+          alert("Format incorrect !");
         };
         this.ngOnInit();
       }
