@@ -1,66 +1,79 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<h2>Your Playlist</h2>
-
-<div *ngFor="let current of songlist">
-  <p>ID - {{current.id}}</p><br/>
-  <p>Name of song - {{current.name}}</p><br/>
-  <p>Artist - {{current.artist}}</p><br/>
-  <p>Album - {{current.album}}</p><br/>
-  <img src="{{current.img}}"/>
-
+<div class="container">
+<h1 class="mt-5">Your Playlist</h1>
+<div class="row mb-5 pt-4 pb-5">
+  <div *ngFor="let current of songlist" class="col-4">
+      <div class="card">
+          <img class="card-img-top" src="{{current.img}}" alt="Card image cap" style="max-height: 300px">
+          <div class="card-body">
+            <h5 class="card-title">Name of song - {{current.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">ID - {{current.id}}</h6>
+            <p class="card-text">Artist - {{current.artist}}</p>
+            <p class="card-text">Album - {{current.album}}</p>
+          </div>
+      </div>
+    </div>
 </div>
 
-<h2>Add new song</h2>
 
-<div class="form-group">
-  <label for="exampleInputEmail1">Name of song</label>
-  <input type="text" class="form-control" [(ngModel)]="tmpSong.name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Artist</label>
-  <input type="text" class="form-control" [(ngModel)]="tmpSong.artist" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Album</label>
-  <input type="text" class="form-control" [(ngModel)]="tmpSong.album" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Album cover</label>
-  <input type="text" class="form-control" [(ngModel)]="tmpSong.img" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
+<h1 class="mt-5 pt-4">Manage Playlist</h1>
+<div class="row mt-5">
+  <div class="col-4">
+      <h2>Add new song</h2>
+      <div class="form-group">
+          <label for="exampleInputEmail1">Name of song</label>
+          <input type="text" class="form-control" [(ngModel)]="tmpSong.name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Artist</label>
+          <input type="text" class="form-control" [(ngModel)]="tmpSong.artist" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Album</label>
+          <input type="text" class="form-control" [(ngModel)]="tmpSong.album" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Album cover</label>
+          <input type="text" class="form-control" [(ngModel)]="tmpSong.img" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        
+        <button (click)="addSong()">Add song</button>
+  </div>
+  
+    <div class="col-4">
+        <h2>Modify song</h2>
+        <div class="form-group">
+          <label for="exampleInputEmail1">id of the song to modify</label>
+          <input type="text" class="form-control" [(ngModel)]="IdToModif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name of song</label>
+          <input type="text" class="form-control" [(ngModel)]="modifSong.name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Artist</label>
+          <input type="text" class="form-control" [(ngModel)]="modifSong.artist" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Album</label>
+          <input type="text" class="form-control" [(ngModel)]="modifSong.album" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Album cover</label>
+          <input type="text" class="form-control" [(ngModel)]="modifSong.img" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        
+        <button (click)="updateSong()">Update song</button>
+    </div>
+    <div class="col-4">
+        <h2>Delete song</h2>
+        
+        <div class="form-group">
+          <label for="exampleInputEmail1">id of the song to delete</label>
+          <input type="text" class="form-control" [(ngModel)]="IdToDelete" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+        </div>
+        
+        <button (click)="deleteSong()">Delete song</button>
+        </div>
+  </div>
 
-<button (click)="addSong()">Add song</button>
-
-<h2>Delete song</h2>
-
-<div class="form-group">
-  <label for="exampleInputEmail1">id of the song to delete</label>
-  <input type="text" class="form-control" [(ngModel)]="IdToDelete" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 </div>
-
-<button (click)="deleteSong()">Delete song</button>
-
-<h2>Modify song</h2>
-<div class="form-group">
-  <label for="exampleInputEmail1">id of the song to modify</label>
-  <input type="text" class="form-control" [(ngModel)]="IdToModif" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Name of song</label>
-  <input type="text" class="form-control" [(ngModel)]="modifSong.name" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Artist</label>
-  <input type="text" class="form-control" [(ngModel)]="modifSong.artist" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Album</label>
-  <input type="text" class="form-control" [(ngModel)]="modifSong.album" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-<div class="form-group">
-  <label for="exampleInputEmail1">Album cover</label>
-  <input type="text" class="form-control" [(ngModel)]="modifSong.img" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-</div>
-
-<button (click)="updateSong()">Update song</button>
