@@ -1,27 +1,36 @@
 # Dixheures
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+Sérieux ? Je dois écrire une doc ? Mais c'est ch... !
 
-## Development server
+## Execution
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Pré-requis
 
-## Code scaffolding
+- MySQL
+- Apache Tomcat
+- Maven
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installation
 
-## Build
+1) Téléchargez le projet ou entrez dans le terminal :
+```Shell
+git clone https://github.com/WildCodeSchool/la_loupe_checkpoint_4_java_angular.git
+cd la_loupe_checkpoint_4_java_angular
+git checkout Post_Aymeric_LaLoupe_2018
+```
+2) Créez un utilisateur et une base de donnée pour l'application :
+```Shell
+mysql -u root -p
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```SQL
+CREATE DATABASE dixheures;
+CREATE USER "il-est-lor"@"localhost" IDENTIFIED BY "L_0r_d3_Se_rev3!lLeR_!";
+GRANT ALL ON dixheures.* TO 'il-est-lor'@'localhost'; 
+```
+## Lancement
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Lancez le serveur et la compilation depuis le dossier téléchargé avec la commande :
+```Shell
+mvn spring-boot:run
+```
