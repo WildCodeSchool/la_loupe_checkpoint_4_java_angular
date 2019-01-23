@@ -1,7 +1,10 @@
+<h1 class="text-center mb-5">My Playlist</h1>
+
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary text-center mb-3" data-toggle="modal" data-target="#exampleModal">
   Add a new song
 </button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -29,8 +32,8 @@
 
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="" *ngFor="let song of songs" class="card" style="width: 18rem;">
+  <div class="row d-flex justify-content-around">
+    <div class="" *ngFor="let song of songs" class="card m-2" style="width: 18rem;">
       <iframe [src]="song.img | pipe" height="315"></iframe>
       <div class="card-body">
         <h5 class="card-title">{{song.name}}</h5>
@@ -43,6 +46,8 @@
     </div>
   </div>
 </div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="modifyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
