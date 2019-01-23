@@ -1,0 +1,144 @@
+<div class="container">
+  <H1 class="text-center">Ma playlist</H1>
+  <div class="text-center mt-3">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ajoutPlay">
+      Ajout d'une music
+    </button>
+  </div>
+  <div class="table-responsive mt-5">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Artiste</th>
+          <th scope="col">Album</th>
+          <th scope="col">Image</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let current of play">
+          <th>{{current.name}}</th>
+          <th>{{current.artist}}</th>
+          <th>{{current.album}}</th>
+          <th>{{current.img}}</th>
+          <th>
+            <button class="btn btn-link" (click)="getUpdate(current.id)" data-toggle="modal" data-target="#updatePlay"><i
+                class="fas fa-edit text-success col-sm-6 col-md-3"></i></button>
+          </th>
+          <th>
+            <button class="btn btn-link" (click)= "delete(current)" >
+              <i class="fas fa-times-circle text-danger col-sm-6 col-md-3"></i>
+            </button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--------------------------MODALS----------------->
+<div class="modal fade" id="ajoutPlay" tabindex="-1" role="dialog" aria-labelledby="creation" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="creation">Ajout d'une playlist </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="date">Name</label>
+            <input [(ngModel)]="newPlay.name" type="text" class="form-control" id="date" aria-describedby="date"
+              placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="lieux">Artiste</label>
+            <input [(ngModel)]="newPlay.artist" type="text" class="form-control" id="lieux" aria-describedby="place"
+              placeholder="Artiste">
+          </div>
+          <div class="form-group">
+              <label for="lieux">Album</label>
+              <input [(ngModel)]="newPlay.album" type="text" class="form-control" id="lieux" aria-describedby="place"
+                placeholder="Album">
+            </div>
+            <div class="form-group">
+                <label for="lieux">Image</label>
+                <input [(ngModel)]="newPlay.img" type="file" class="form-control" id="lieux" aria-describedby="place"
+                  placeholder="Image">
+              </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary p" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary" (click)="create()" data-dismiss="modal">Création d'un album</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--------------UPDATE---------->
+   <div class="modal fade" id="updatePlay" tabindex="-1" role="dialog" aria-labelledby="update" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="creation">Modification</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="Name">Name</label>
+            <input [(ngModel)]="updatePlay.name" type="text" class="form-control" id="description" aria-describedby="name">
+          </div>
+          <div class="form-group">
+            <label for="Artiste">Artiste</label>
+            <input [(ngModel)]="updatePlay.artist" type="text" class="form-control" id="Artiste" aria-describedby="name">
+          </div>
+          <div class="form-group">
+              <label for="Album">Album</label>
+              <input [(ngModel)]="updatePlay.album" type="text" class="form-control" id="Album" aria-describedby="name">
+            </div>
+            <div class="form-group">
+                <label for="Image">Image</label>
+                <input [(ngModel)]="updatePlay.image" type="file" class="form-control" id="Image" aria-describedby="name">
+              </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+              Annuler
+            </button>
+            <button type="button" class="btn btn-primary" (click)="putUpdate(updatePlay, PlayById.id)" data-dismiss="modal">
+              Mise à jour résultat
+            </button>
+          </div>
+        </div>
+      </div>  
+
+      <!----------------CONFIRMATION DE SUPP------------------->
+      <div class="modal fade" id="supp" tabindex="-1" role="dialog" aria-labelledby="supp" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center" id="creation">
+                  Confirmation de suppression
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body text-center">
+                <i class="far fa-trash-alt fa-7x"></i>
+              </div>
+              <div class="modal-footer text-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Annuler
+                </button>
+                <button (click)="delete(Id)" type="button" class="btn btn-primary" data-dismiss="modal">
+                  Je confirme la suppression
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
