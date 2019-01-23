@@ -1,0 +1,11 @@
+Q1 - A ) Sur un serveur
+Q2 - A ) Client
+Q3 - B ) Frameworks
+Q4 - A ) À donner un cadre de travail C ) À être plus productif D ) À faciliter la maintenance du code
+Q5 - C ) Une entité
+Q6 - A ) Créer une relation entre deux entités B ) Faire une jointure
+Q7 - D ) XSLT
+Q8 - A ) À piéger l'internaute en lui faisant exécuter une requête à son insu, avec ses propres droits.
+Q9 - A ) À ne pas renvoyer systématiquement le couple email/mot de passe D ) À s'identifier rapidement
+Q10 - B ) L'équipe pédagogique
+
