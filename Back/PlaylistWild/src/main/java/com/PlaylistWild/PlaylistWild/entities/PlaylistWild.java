@@ -16,6 +16,16 @@ public class PlaylistWild {
 	private String album;
 	private String img;
 	
+	public PlaylistWild () {
+		
+	}
+	
+	public PlaylistWild(String name, String artist, String album, String img) {
+		this.name = name;
+		this.artist = artist;
+		this.album = album;
+		this.img = img;
+	}
 	
 	public Long getId() {
 		return id;
@@ -57,6 +67,15 @@ public class PlaylistWild {
 		this.img = img;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "PlaylistWild {" +
+				" id=" + id +
+				", name ='" + name + '\'' +
+				", artist ='" + artist + '\'' +
+				", album = '" + album + '\'' + 
+				", img = '" + img + '\'' +
+				'}';
+	}
 
 }
